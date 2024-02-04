@@ -17,7 +17,7 @@ type routeMethod map[string]http.HandlerFunc
 type router map[string]routeMethod
 
 func templatesWithLayout(names ...string) *template.Template {
-	getPath := func(filename string) string { return path.Join("internal", "templates", filename) }
+	getPath := func(filename string) string { return path.Join("ui", "templates", filename) }
 
 	filenames := make([]string, len(names)+1)
 	filenames[0] = getPath("layout.gohtml")
@@ -56,6 +56,11 @@ func (r router) mapRoutes() {
 	}
 }
 
+func routeStaticFiles() {
+	const prefix = "/static/css/"
+	http.Handle(prefix, http.StripPrefix(prefix, http.FileServer(http.Dir("ui/static/css"))))
+}
+
 var routes = router{
 	"/": map[string]http.HandlerFunc{
 		http.MethodGet: renderTemplatesHandler(nil, "home"),
@@ -63,7 +68,9 @@ var routes = router{
 }
 
 func main() {
-	addr := fmt.Sprintf(":%d", port)
+	routeStaticFiles()
 	routes.mapRoutes()
+
+	addr := fmt.Sprintf(":%d", port)
 	log.Fatal(http.ListenAndServe(addr, nil))
 }

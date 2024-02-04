@@ -1,0 +1,15 @@
+:root {
+	--peach: #efbc9bff;
+	--mint: #59c9a5ff;
+	--glaucous: #7180acff;
+	--dim-gray: #696773ff;
+	--night: #0d160bff;
+	--oxford-blue: #0c1b33ff;
+
+	background-color: var(--mint);
+	color: var(--oxford-blue);
+}
+
+h1, h2 {
+	text-align: center;
+}
