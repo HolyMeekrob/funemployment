@@ -10,11 +10,8 @@ import (
 
 const port = 8880
 
-// routeMethod maps an http verb to a handler
-type routeMethod map[string]http.HandlerFunc
-
-// router is a map of paths to a collection of handlers identified by http verb
-type router map[string]routeMethod
+// router is a map of routes to a collection of handlers identified by http verb
+type router map[string]http.HandlerFunc
 
 func templatesWithLayout(names ...string) *template.Template {
 	getPath := func(filename string) string { return path.Join("ui", "templates", filename) }
@@ -43,28 +40,26 @@ func renderTemplatesHandler(data any, names ...string) http.HandlerFunc {
 }
 
 func (r router) mapRoutes() {
-	for route, handlers := range r {
-		http.HandleFunc(route, func(writer http.ResponseWriter, request *http.Request) {
-			handler, ok := handlers[request.Method]
-			if !ok {
-				http.Error(writer, "Not found", http.StatusNotFound)
-				return
-			}
-
-			handler(writer, request)
-		})
+	for route, handler := range r {
+		http.HandleFunc(route, handler)
 	}
 }
 
 func routeStaticFiles() {
 	const prefix = "/static/css/"
-	http.Handle(prefix, http.StripPrefix(prefix, http.FileServer(http.Dir("ui/static/css"))))
+	http.Handle(get(prefix), http.StripPrefix(prefix, http.FileServer(http.Dir("ui/static/css"))))
+}
+
+func routePattern(method string, path string) string {
+	return fmt.Sprintf("%s %s", method, path)
+}
+
+func get(path string) string {
+	return routePattern(http.MethodGet, path)
 }
 
 var routes = router{
-	"/": map[string]http.HandlerFunc{
-		http.MethodGet: renderTemplatesHandler(nil, "home"),
-	},
+	get("/{$}"): renderTemplatesHandler(nil, "home"),
 }
 
 func main() {
