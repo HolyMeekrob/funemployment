@@ -3,11 +3,12 @@
 	<html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Andy's Unemployment - {{template "title" .}}</title>
-		<link rel="stylesheet" href="/static/css/layout.css" />
+		<title>Andy Needs A Job! - {{template "title" .}}</title>
+		<link rel="stylesheet" href="/static/css/layout.css"/>
+        {{template "head" .}}
 	</head>
 	<body>
-    {{template "main" .}}
+    {{template "body" .}}
 	</body>
 	</html>
 {{end}}

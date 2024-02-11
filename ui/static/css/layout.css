@@ -10,6 +10,12 @@
 	color: var(--oxford-blue);
 }
 
+body {
+	height: 100vh;
+	margin: 0;
+	text-align: justify;
+}
+
 h1, h2 {
 	text-align: center;
 }

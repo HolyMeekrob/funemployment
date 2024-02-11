@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"net/url"
 	"path"
 )
 
@@ -46,8 +47,11 @@ func (r router) mapRoutes() {
 }
 
 func routeStaticFiles() {
-	const prefix = "/static/css/"
-	http.Handle(get(prefix), http.StripPrefix(prefix, http.FileServer(http.Dir("ui/static/css"))))
+	root, _ := url.Parse("/static/")
+	cssPath := root.JoinPath("css/").Path
+	imgPath := root.JoinPath("images/").Path
+	http.Handle(get(cssPath), http.StripPrefix(cssPath, http.FileServer(http.Dir("ui/static/css"))))
+	http.Handle(get(imgPath), http.StripPrefix(imgPath, http.FileServer(http.Dir("ui/static/images"))))
 }
 
 func routePattern(method string, path string) string {

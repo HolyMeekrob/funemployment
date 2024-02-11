@@ -1,6 +1,22 @@
 {{define "title"}}Home{{end}}
 
-{{define "main"}}
-	<h1>Andy's Unemployment Central</h1>
-	<h2>Your home for all things regarding his quest for a new job.</h2>
+{{define "head"}}
+	<link rel="stylesheet" href="/static/css/home.css"/>
+{{end}}
+{{define "body"}}
+	<main>
+		<div>
+			<h1>Hello, world!</h1>
+			<div>
+				I'm Andy, a software engineer who was laid off at the start of the year. I built / am building this
+				website during my unemployment to document my experience and learn some new stuff. The intended audience
+				is myself and any potential employers, but if you're someone with a weird curiosity about some dude
+				having career upheaval, that's cool too. Look around, make yourself comfortable,
+				and even <a href="/contact">say hi</a> if you'd like.
+			</div>
+		</div>
+		<div>
+			<img id="headshot" src="/static/images/headshot.png" alt="andy's headshot"/>
+		</div>
+	</main>
 {{end}}
