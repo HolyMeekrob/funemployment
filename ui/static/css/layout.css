@@ -20,6 +20,24 @@ body {
 	text-align: justify;
 }
 
+main {
+	margin: auto;
+	width: 70%;
+	height: 100%;
+
+	@media (1600px <= width < 2600px) {
+		width: 50%;
+	}
+
+	@media (width >= 2600px) {
+		width: 30%;
+	}
+
+	@media (width >= 1280px) {
+		flex-wrap: nowrap;
+	}
+}
+
 h1, h2 {
 	text-align: center;
 }

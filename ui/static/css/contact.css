@@ -1,0 +1,11 @@
+#socials {
+	margin-top: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		height: 100px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}

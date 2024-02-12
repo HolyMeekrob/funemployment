@@ -63,7 +63,8 @@ func get(path string) string {
 }
 
 var routes = router{
-	get("/{$}"): renderTemplatesHandler(nil, "home"),
+	get("/{$}"):     renderTemplatesHandler(nil, "home"),
+	get("/contact"): renderTemplatesHandler(nil, "contact"),
 }
 
 func main() {
