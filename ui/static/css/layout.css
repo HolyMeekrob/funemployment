@@ -53,3 +53,24 @@ a:visited {
 a:hover {
 	color: var(--pumpkin);
 }
+
+nav {
+	margin: 0 2em;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: right;
+		width: 100%;
+		column-gap: 2em;
+	}
+
+	.active {
+		text-decoration: none;
+	}
+
+	a.active, a.active:hover {
+		color: var(--lapis-lazuli)
+	}
+}
