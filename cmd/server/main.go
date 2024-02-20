@@ -1,15 +1,21 @@
 package main
 
 import (
+	"database/sql"
+	"flag"
 	"fmt"
+	"github.com/holymeekrob/funemployment/internal/config"
 	"html/template"
 	"log"
+	_ "modernc.org/sqlite"
 	"net/http"
 	"net/url"
 	"path"
 )
 
 const port = 8880
+
+var db *sql.DB
 
 // router is a map of routes to a collection of handlers identified by http verb
 type router map[string]http.HandlerFunc
@@ -73,6 +79,17 @@ var routes = router{
 }
 
 func main() {
+	env := flag.String("env", "dev", "The name of the environment")
+	cfg, err := config.Load(*env)
+	if err != nil {
+		panic(err.Error())
+	}
+
+	db, err = sql.Open("sqlite", cfg.Db)
+	if err != nil {
+		panic(err.Error())
+	}
+
 	routeStaticFiles()
 	routes.mapRoutes()
 
