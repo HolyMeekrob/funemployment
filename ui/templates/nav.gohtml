@@ -1,8 +1,9 @@
 {{define "nav"}}
 	<nav>
-		<ul>
+		<menu>
 			<li><a href="/" {{if eq .Name "Home" }}class="active"{{end}}>Home</a></li>
 			<li><a href="/contact" {{if eq .Name "Contact" }}class="active"{{end}}>Contact</a></li>
-		</ul>
+			<li><a href="/resume" {{if eq .Name "Resume" }}class="active"{{end}}>Résumé</a></li>
+		</menu>
 	</nav>
 {{end}}

@@ -1,0 +1,79 @@
+body {
+	height: auto;
+}
+
+.left {
+	display: inline-block;
+}
+
+.right {
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+
+.columns {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	column-gap: 5em;
+}
+
+.columns > div {
+	flex-grow: 1;
+	flex-basis: 26%;
+	text-align: left;
+}
+
+.summary {
+	font-style: italic;
+	margin: 1em 0;
+}
+
+.section > h4, hgroup {
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid black;
+}
+
+hgroup {
+	text-align: center;
+	margin-bottom: 1em;
+
+	h2, h3, p {
+		margin: 0.5em;
+	}
+}
+
+.section {
+	margin-bottom: 2em;
+}
+
+.job {
+	margin-bottom: 4em;
+	h5 {
+		margin: 0;
+	}
+}
+
+#resume {
+	background-color: #fafafa;
+	background-image: url("../images/paper.png");
+	background-repeat: repeat;
+	filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
+	padding: 2em;
+	margin: 2em 0;
+
+	div {
+		font-family: "Lora", serif;
+		line-height: 1.5;
+	}
+}
+
+#resume:not(hgroup) {
+
+}
+
+#resume:after {
+	content: "";
+	height: 2em;
+}

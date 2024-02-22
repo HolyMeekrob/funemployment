@@ -1,0 +1,198 @@
+{{define "title"}}Résumé{{end}}
+
+{{define "head"}}
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/resume.css"/>
+{{end}}
+
+{{define "body"}}
+	<main>
+		<h1>Résumé</h1>
+		<a href="static/docs/resume.pdf">Download</a>
+		<section id="resume">
+			<hgroup>
+				<h2>Andy Steinberg</h2>
+				<h3>Software Engineer and then some</h3>
+				<p>Austin, TX</p>
+			</hgroup>
+			<div id="contact" class="section">
+				<div class="left"><a href="https://github.com/HolyMeekrob">github.com/HolyMeekrob</a></div>
+				<div class="right"><a href="https://linkedin.com/in/andysteinberg9">linkedin.com/in/andysteinberg9</a></div>
+			</div>
+			<div id="summary" class="section">
+				<h4>Summary</h4>
+				<div>
+					Full-stack developer with a focus on the backend, I have a demonstrated history of building high
+					quality software. I’ve served as both an individual contributor and team leader. I am motivated by
+					my love of solving hard problems and learning new things.
+				</div>
+			</div>
+			<div id="skills" class="section">
+				<h4>Technical Skills</h4>
+				<div id="proficient">
+					<h5>Proficient</h5>
+					<div class="columns">
+						<div>C# / .Net</div>
+						<div>JavaScript / Node.js</div>
+						<div>Automated testing</div>
+						<div>SQL Server / PostgreSQL</div>
+						<div>HTML / CSS</div>
+						<div>Dependency injection</div>
+						<div>ORMs (Entity Framework)</div>
+						<div>VCS (Git / Hg / p4)</div>
+						<div>Bootstrap</div>
+						<div>HTTP / Rest API</div>
+						<div>Continuous integration</div>
+						<div>Functional programming</div>
+						<div>Software design patterns</div>
+						<div>OO principles / SOLID</div>
+						<div>Mentorship / Code review</div>
+						<div>Distributed applications</div>
+						<div>Backend system design</div>
+						<div>Jira</div>
+					</div>
+				</div>
+				<div id="some-experience">
+					<h5>Some experience</h5>
+					<div class="columns">
+						<div>Python / Flask</div>
+						<div>React</div>
+						<div>ELK stack</div>
+						<div>SQLite</div>
+						<div>Elm</div>
+						<div>Elixir</div>
+						<div>Flatbuffers</div>
+						<div>Svelte</div>
+						<div>F#</div>
+						<div>GCP / AWS / Azure</div>
+						<div>Typescript</div>
+						<div>MongoDB</div>
+						<div>Docker</div>
+						<div>Go</div>
+						<div>Redis</div>
+						<div>RabbitMQ</div>
+						<div>Powershell / Bash scripting</div>
+						<div>RPC</div>
+					</div>
+				</div>
+			</div>
+			<div id="experience" class="section">
+				<h4>Experience</h4>
+				<div class="job">
+					<h5>Staff Software Engineer</h5>
+					<div class="company"><a href="https://www.forfunlabs.com/">For Fun Labs</a></div>
+					<div class="location">Austin, TX (Remote)</div>
+					<div class="duration">11/2022 - 1/2024</div>
+					<div class="summary">
+						I was the lone backend engineer for the #1 virtual reality table tennis game. I implemented
+						many core systems, including integrations for authentication and in-app purchases.
+					</div>
+					<ul>
+						<li>Web and game server development (.Net)</li>
+						<li>Gathered specifications and scheduled all backend work</li>
+						<li>Rebuilt data access layer utilizing multiple caching tiers</li>
+						<li>Rewrote data serialization layer for performance and standards compliance</li>
+						<li>Built regression testing suite with high code coverage and CI (Azure pipelines)</li>
+					</ul>
+				</div>
+				<div class="job">
+					<h5>Lead Backend Engineer</h5>
+					<div class="company"><a href="https://www.crexi.com/">CREXi</a></div>
+					<div class="location">Austin, TX (Remote)</div>
+					<div class="duration">4/2022 - 10/22</div>
+					<div class="summary">
+						I led backend engineering on a larger cross-functional team. In addition, I made contributions
+						to company-wide engineering, including the introduction of an RFC process for new features.
+					</div>
+					<ul>
+						<li>Provided requirements and acceptance criteria for tickets</li>
+						<li>Migrated legacy .Net framework services to modern .Net microservices</li>
+						<li>Refactored regression tests for microservices to fix inherent issues</li>
+					</ul>
+				</div>
+				<div class="job">
+					<h5>Senior Software Developer</h5>
+					<div class="company"><a href="https://www.silencershop.com/">Silencer Shop</a></div>
+					<div class="location">Austin, TX</div>
+					<div class="duration">5/2021 - 3/2022</div>
+					<div class="summary">
+						Modernized a legacy .Net shop with modern technology and software design.
+					</div>
+					<ul>
+						<li>Full stack development across multiple distinct .Net applications (Web, Windows, API)</li>
+						<li>Completed integrations with such services as SSO, e-commerce, and fraud detection</li>
+					</ul>
+				</div>
+				<div class="job">
+					<h5>Lead Backend Engineer</h5>
+					<div class="company"><a href="https://kabam.com/">Kabam</a></div>
+					<div class="location">Austin, TX (Hybrid)</div>
+					<div class="duration">10/2018 - 4/2021</div>
+					<div class="summary">
+						Engineering lead and manager across multiple multiplayer mobile games. As an engineer, I
+						built automation tools (including the UX) that drastically reduced iteration time for
+						game features.
+					</div>
+					<ul>
+						<li>Built backend servers for games with different tech stacks (Node.js, .Net)</li>
+						<li>Wrote code gen tools targeting various systems (server, client, database, network)</li>
+					</ul>
+				</div>
+				<div class="job">
+					<h5>Senior Software Developer</h5>
+					<div class="company"><a href="https://www.dell.org/">Michael and Susan Dell Foundation</a></div>
+					<div class="location">Austin, TX</div>
+					<div class="duration">7/2015 - 9/2018</div>
+					<div class="summary">
+						Rebuilt a legacy internal web app as a responsive application that improved upon the
+						original in every way. Sped up feature development so much that I ran out of things to do.
+					</div>
+				</div>
+				<div class="job">
+					<h5>Software Engineering Manager</h5>
+					<div class="company"><a href="https://www.buildasign.com/">BuildASign.com</a></div>
+					<div class="location">Austin, TX</div>
+					<div class="duration">4/2013 - 6/2015</div>
+					<div class="summary">
+						Promoted to manager after being recognized as a leader by the rest of the engineering team.
+						Wrote a number of tools to better track and publicize team performance. Coordinated and
+						participated in the on-call rotation, volunteering as the permanent escalation engineer.
+					</div>
+				</div>
+				<div class="job">
+					<h5>Senior Software Engineer</h5>
+					<div class="company"><a href="https://www.buildasign.com/">BuildASign.com</a></div>
+					<div class="location">Austin, TX</div>
+					<div class="duration">4/2008 - 4/2013</div>
+					<div class="summary">
+						Started as a junior full-stack engineer completely unfamiliar with the tech stack. Rebuilt the
+						print image generation code which is one of the most critical systems at a print shop.
+						Responsible for all tooling used by the manufacturing and shipping warehouse teams.
+					</div>
+				</div>
+				<div class="job">
+					<h5>Engineering Scientist Associate</h5>
+					<div class="company"><a href="https://www.arlut.utexas.edu/">Applied Research Labs</a></div>
+					<div class="location">Austin, TX</div>
+					<div class="duration">4/2006 - 4/2008</div>
+					<div class="summary">
+						Wrote event processing middleware in C, as well as a Java UI application, on a classified
+						project.
+					</div>
+				</div>
+				<div class="job">
+					<h5>Software Engineer</h5>
+					<div class="company"><a href="https://www.rtx.com/">Raytheon</a></div>
+					<div class="location">Garland, TX</div>
+					<div class="duration">6/2003 - 4/2006</div>
+					<div class="summary">Java UI application development on a classified defense project.</div>
+				</div>
+			</div>
+			<div id="education" class="section">
+				<h4>Education</h4>
+				<div>The University of Texas at Austin</div>
+				<div>B.S., Computer Science, 2003</div>
+			</div>
+		</section>
+	</main>
+{{end}}

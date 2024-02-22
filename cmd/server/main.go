@@ -61,8 +61,10 @@ func routeStaticFiles() {
 	root, _ := url.Parse("/static/")
 	cssPath := root.JoinPath("css/").Path
 	imgPath := root.JoinPath("images/").Path
+	docsPath := root.JoinPath("docs/").Path
 	http.Handle(get(cssPath), http.StripPrefix(cssPath, http.FileServer(http.Dir("ui/static/css"))))
 	http.Handle(get(imgPath), http.StripPrefix(imgPath, http.FileServer(http.Dir("ui/static/images"))))
+	http.Handle(get(docsPath), http.StripPrefix(docsPath, http.FileServer(http.Dir("ui/static/docs"))))
 }
 
 func routePattern(method string, path string) string {
@@ -76,6 +78,7 @@ func get(path string) string {
 var routes = router{
 	get("/{$}"):     renderTemplatesHandler(page{Name: "Home"}, "home"),
 	get("/contact"): renderTemplatesHandler(page{Name: "Contact"}, "contact"),
+	get("/resume"):  renderTemplatesHandler(page{Name: "Resume"}, "resume"),
 }
 
 func main() {
